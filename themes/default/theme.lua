@@ -11,7 +11,7 @@ local themes_path = os.getenv("HOME").."/.config/awesome/themes/"
 
 local theme = {}
 
-theme.font          = "sans 8"
+theme.font          = "Fira Code Retina 9"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
