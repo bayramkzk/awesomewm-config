@@ -7,5 +7,5 @@ function run {
   fi
 }
 
-run ~/.config/awesome/mouse_config.sh
+run ~/.config/awesome/scripts/mouse_config.sh
 
