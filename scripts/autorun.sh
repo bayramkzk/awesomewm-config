@@ -14,10 +14,6 @@ xinput set-prop 16 285 1
 
 # Keyboard
 xset led
-setxkbmap -layout "us,de" -option "grp:alt_shift_toggle"
-
-# Wallpaper
-feh --bg-max ~/Pictures/Wallpapers/jupiter-close.jpg
 
 # Sound server
 run pulseaudio
