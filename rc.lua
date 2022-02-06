@@ -50,7 +50,7 @@ local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.ge
 beautiful.init(theme_path)
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -324,9 +324,26 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Volume Keys
+    awful.key({}, "XF86AudioLowerVolume", function ()
+              awful.util.spawn("amixer -q -D pulse sset Master 5%-", false) end),
+    awful.key({}, "XF86AudioRaiseVolume", function ()
+              awful.util.spawn("amixer -q -D pulse sset Master 5%+", false) end),
+    awful.key({}, "XF86AudioMute", function ()
+              awful.util.spawn("amixer -D pulse set Master 1+ toggle", false) end),
+
+    -- Media Keys
+    awful.key({}, "XF86AudioPlay", function()
+              awful.util.spawn("playerctl play-pause", false) end),
+    awful.key({}, "XF86AudioNext", function()
+              awful.util.spawn("playerctl next", false) end),
+    awful.key({}, "XF86AudioPrev", function()
+              awful.util.spawn("playerctl previous", false) end)
 )
 
 clientkeys = gears.table.join(
