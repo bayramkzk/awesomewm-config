@@ -164,7 +164,6 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
-    local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
     -- Wallpaper
     set_wallpaper(s)
 
@@ -212,7 +211,6 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             mykeyboardlayout,
-            volume_widget { widget_type = 'arc' },
             mytextclock,
         },
     }

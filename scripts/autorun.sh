@@ -19,3 +19,4 @@ pulseaudio --start
 # Programs
 run picom
 run flameshot
+run volumeicon
